@@ -15,6 +15,7 @@
 
 #include <string>
 #include <exception>
+#include <iostream>
 
 class Bureaucrat {
 	private:
@@ -48,5 +49,7 @@ class Bureaucrat {
 				const char*	what() const throw();
 		};
 };
+
+std::ostream	&operator<<(std::ostream &os, const Bureaucrat &b);
 
 #endif
