@@ -2,14 +2,14 @@
 #include <iostream>
 #include <exception>
 
-static void printHeader(const std::string& title) {
+static void printLine(const std::string& title) {
     std::cout << "\n=== " << title << " ===" << std::endl;
 }
 
 int	main(void) {
 
     // Test an invalid grade above the maximum allowed value.
-    printHeader("Constructor grade = 151 (expects TooLow)");
+    printLine("Constructor grade = 151 (expects TooLow)");
     try {
         Bureaucrat l("Over", 151);
         std::cout << l << std::endl;
@@ -18,7 +18,7 @@ int	main(void) {
     }
 
     // Test a normal increment from 2 to 1.
-    printHeader("Normal increment 2 -> 1");
+    printLine("Normal increment 2 -> 1");
     try {
         Bureaucrat inc("Inc", 2);
         std::cout << "Before: " << inc;
@@ -29,7 +29,7 @@ int	main(void) {
     }
 
     // Test incrementing the highest possible grade.
-    printHeader("Increment at 1 (expects TooHigh)");
+    printLine("Increment at 1 (expects TooHigh)");
     try {
         Bureaucrat top("Top", 1);
         top.incrementGrade();
@@ -39,7 +39,7 @@ int	main(void) {
     }
 
     // Test a normal decrement from 149 to 150.
-    printHeader("Normal decrement 149 -> 150");
+    printLine("Normal decrement 149 -> 150");
     try {
         Bureaucrat dec("Dec", 149);
         std::cout << "Before: " << dec;
@@ -50,7 +50,7 @@ int	main(void) {
     }
 
     // Test decrementing the lowest possible grade.
-    printHeader("Decrement at 150 (expects TooLow)");
+    printLine("Decrement at 150 (expects TooLow)");
     try {
         Bureaucrat low("Low", 150);
         low.decrementGrade();
@@ -60,7 +60,7 @@ int	main(void) {
     }
 
     // Test the copy constructor.
-    printHeader("Copy constructor");
+    printLine("Copy constructor");
     try {
         Bureaucrat base("Base", 42);
         Bureaucrat copy(base);
@@ -71,7 +71,7 @@ int	main(void) {
     }
 
     // Test the assignment operator.
-    printHeader("Operator=");
+    printLine("Operator=");
     try {
         Bureaucrat lhs("Lhs", 120);
         Bureaucrat rhs("Rhs", 3);
