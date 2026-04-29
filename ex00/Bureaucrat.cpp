@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {
 	std::cout << "Bureaucrat called " << _name << " has been created" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(grade) {
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade) {
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
